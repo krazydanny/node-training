@@ -1,20 +1,20 @@
+const SomeClass = require( '../objects/SomeClass.js' );
 
 exports.getById = ( req, res, next ) => {
 
-	obj = {
-		name: "Dan"
-	};
+	obj = new SomeClass( 'a' );
 
-	json = {
-		id: "some",
-		name: obj.name,
-	};
+	// static methods and attributes are accessed only though the class, not available in instances
+	console.log( SomeClass.someMethod1() );
 
-	attr = 'name';
+	// private attributes are treated as undefined
+	// trying to access undefined properties is handled by node and does not throw errors
+	console.log( obj.property3 );
 
-	console.log( json[attr] );
+	// null is not the same ass undefined
+	console.log ( undefined == null );
 
-	res.json( json );
+	res.json( obj );
 }
 
 
