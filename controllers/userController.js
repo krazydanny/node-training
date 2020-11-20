@@ -1,5 +1,5 @@
 
-exports.exports = ( req, res, next ) => {
+exports.getById = ( req, res, next ) => {
 
 	obj = {
 		name: "Dan"
@@ -18,7 +18,7 @@ exports.exports = ( req, res, next ) => {
 }
 
 
-exports.exports = ( req, res, next ) => {
+exports.create = ( req, res, next ) => {
 
 	obj = {
 		name: "Nico"
